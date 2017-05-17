@@ -18,8 +18,8 @@ themes/*
 themes/my-site/node_modules/
 
 # Ignore OS files #
-.DS_Store
-.DS_Store?
+*.DS_Store
+*.DS_Store?
 ._*
 .Spotlight-V100
 .Trashes
@@ -27,4 +27,4 @@ themes/my-site/node_modules/
 ehthumbs.db
 *[Tt]humbs.db
 *.Trashes
-index.php
+*index.php

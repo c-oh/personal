@@ -7,5 +7,7 @@
 get_header(); ?>
 
 <div class= "fp-banner">
-<p class = "fp-subtitle">is a web developer and UI designer.</p>
+<p class = "fp-subtitle">is a web developer.</p>
 </div> 
+
+<?php get_footer();?>
