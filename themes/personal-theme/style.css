@@ -766,3 +766,6 @@ object {
     border-color: transparent; }
   50% {
     border-color: orange; } }
+
+#colophon {
+  background-color: #ffd813; }
