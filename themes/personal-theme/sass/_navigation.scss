@@ -6,11 +6,17 @@ ul {
 	}
 }
 
-.home {
+//body css to control the menu
+body {
 	position: relative;
 	left: 0;
+	&.menu-push {
+		left: 200px;
+		overflow: hidden;
+	}
 }
 
+//the slide out menu stuff
 #menu {
 	position: fixed;
 	width: 200px;
@@ -18,54 +24,77 @@ ul {
 	top: 0;
 	left: -254px;
 	z-index: 1000;
-	background-color: #186;
+	background-color: #ffd813;
 	overflow: auto;
+	&.menu-open {
+		left: 0px;
+		margin-left: 0px;
+	}
+	li:first-child{
+		margin-top: 30px;
+	}
+	li{
+		margin-top: 10px;
+	a{
+		font-weight: 400;
+		font-family: $font_os;
+	}
+}
 }
 
+//transitions for the menu and body
 #menu,
-.home {
+body {
 	-webkit-transition: all 0.3s ease;
 	-moz-transition: all 0.3s ease;
 	transition: all 0.3s ease;
 }
 
-#menu.menu-open {
-	left: 0px;
-	margin-left: 0px;
-}
-
-.menu-push {
-	left: 200px;
-}
-
+//the nav icon and text container
 #nav-icon {
 	position: absolute;
 	z-index: 99;
 	cursor: pointer;
-	margin-left:10px;
+	margin-left: 15px;
+	display: flex;
 }
 
+.menu-tag {
+	color: white;
+	margin-left: 10px;
+	text-transform: uppercase;
+	font-family: $font_os;
+	font-weight: 300;
+	.menu-text {
+		margin-top: 14px;
+		letter-spacing: 2px;
+		&.expanded-text {
+			margin-top: 24px;
+		}
+	}
+}
+
+// This makes the hamburger icon
 .hamburger {
 	margin-top: 10px;
-	display: inline-block;
 	.bars {
 		margin-top: 5px;
 		background: #DAA520;
 		height: 5px;
 		width: 40px;
-		border-radius: 2.5vh;
+		border-radius: 2.5px;
 		position: relative;
 	}
 	.meat-cheese {
 		background: #8B4513;
 		&::after {
-			border: 6px solid yellow;
+			border: 5px solid yellow;
 			border-color: yellow transparent transparent transparent;
 			position: absolute;
 			content: "";
 			bottom: -10px;
 			right: 4px;
-			transition: .3s all ease-in-out;
+			z-index: 99;
 			display: none;
 		}
 	}
@@ -75,46 +104,42 @@ ul {
 		position: relative;
 		top: 0;
 	}
-	.veggies {
-		background-color: green;
+	.seed-container {
+		margin-left: 10px;
+		.seed {
+			display: none;
+			width: 3px;
+			height: 2px;
+			background-color: #fdf1cb;
+			-webkit-border-radius: 10px;
+			-moz-border-radius: 10px;
+			border-radius: 10px;
+			-webkit-box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
+			-moz-box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
+			box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
+			top: -10px;
+			position: relative;
+			-webkit-transform: rotate(110deg);
+			-moz-transform: rotate(110deg);
+			-ms-transform: rotate(110deg);
+			-o-transform: rotate(110deg);
+			transform: rotate(110deg);
+		}
 	}
-	.seed {
-	display: none;
-	width: 3px;
-	height: 4px;
-	background-color: #fdf1cb;
-	margin-left: 8px;
-	-webkit-border-radius: 10px;
-	-moz-border-radius: 10px;
-	border-radius: 10px;
-	-webkit-box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
-	-moz-box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
-	box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
-	top: -12px;
-	position: relative;
-	-webkit-transform: rotate(110deg);
-	-moz-transform: rotate(110deg);
-	-ms-transform: rotate(110deg);
-	-o-transform: rotate(110deg);
-	transform: rotate(110deg);
-}
-
-	&:active,
 	&.expanded {
 		.meat-cheese::after {
-			bottom: -12px;
-			z-index: 99;
 			display: block;
 		}
 		.top-bread {
 			height: 18px;
-			border-radius: 20vh 20vh 2.5vh 2.5vh;
-			.seed{
+			border-bottom: 3px solid green;
+			border-radius: 20px 20px 2.5px 2.5px;
+			.seed {
 				display: inline-block;
 			}
 		}
-		.veggies {
-			border-bottom: 2px solid red;
+		.bread {
+			border-top: 2px solid red;
 		}
 		.meat-cheese {
 			border-bottom: 1px solid yellow;

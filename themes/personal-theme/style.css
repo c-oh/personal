@@ -444,9 +444,12 @@ ul {
   ul a {
     display: block; }
 
-.home {
+body {
   position: relative;
   left: 0; }
+  body.menu-push {
+    left: 200px;
+    overflow: hidden; }
 
 #menu {
   position: fixed;
@@ -455,77 +458,91 @@ ul {
   top: 0;
   left: -254px;
   z-index: 1000;
-  background-color: #186;
+  background-color: #ffd813;
   overflow: auto; }
+  #menu.menu-open {
+    left: 0px;
+    margin-left: 0px; }
+  #menu li:first-child {
+    margin-top: 30px; }
+  #menu li {
+    margin-top: 10px; }
+    #menu li a {
+      font-weight: 400;
+      font-family: "open_sans"; }
 
 #menu,
-.home {
+body {
   transition: all 0.3s ease; }
-
-#menu.menu-open {
-  left: 0px;
-  margin-left: 0px; }
-
-.menu-push {
-  left: 200px; }
 
 #nav-icon {
   position: absolute;
   z-index: 99;
   cursor: pointer;
-  margin-left: 10px; }
+  margin-left: 15px;
+  display: -ms-flexbox;
+  display: flex; }
+
+.menu-tag {
+  color: white;
+  margin-left: 10px;
+  text-transform: uppercase;
+  font-family: "open_sans";
+  font-weight: 300; }
+  .menu-tag .menu-text {
+    margin-top: 14px;
+    letter-spacing: 2px; }
+    .menu-tag .menu-text.expanded-text {
+      margin-top: 24px; }
 
 .hamburger {
-  margin-top: 10px;
-  display: inline-block; }
+  margin-top: 10px; }
   .hamburger .bars {
     margin-top: 5px;
     background: #DAA520;
     height: 5px;
     width: 40px;
-    border-radius: 2.5vh;
+    border-radius: 2.5px;
     position: relative; }
   .hamburger .meat-cheese {
     background: #8B4513; }
     .hamburger .meat-cheese::after {
-      border: 6px solid yellow;
+      border: 5px solid yellow;
       border-color: yellow transparent transparent transparent;
       position: absolute;
       content: "";
       bottom: -10px;
       right: 4px;
-      transition: .3s all ease-in-out;
+      z-index: 99;
       display: none; }
   .hamburger .top-bread {
     overflow: hidden;
     transition: .3s all ease-in-out;
     position: relative;
     top: 0; }
-  .hamburger .veggies {
-    background-color: green; }
-  .hamburger .seed {
-    display: none;
-    width: 3px;
-    height: 4px;
-    background-color: #fdf1cb;
-    margin-left: 8px;
-    border-radius: 10px;
-    box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
-    top: -12px;
-    position: relative;
-    transform: rotate(110deg); }
-  .hamburger:active .meat-cheese::after, .hamburger.expanded .meat-cheese::after {
-    bottom: -12px;
-    z-index: 99;
+  .hamburger .seed-container {
+    margin-left: 10px; }
+    .hamburger .seed-container .seed {
+      display: none;
+      width: 3px;
+      height: 2px;
+      background-color: #fdf1cb;
+      border-radius: 10px;
+      box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
+      top: -10px;
+      position: relative;
+      transform: rotate(110deg); }
+  .hamburger.expanded .meat-cheese::after {
     display: block; }
-  .hamburger:active .top-bread, .hamburger.expanded .top-bread {
+  .hamburger.expanded .top-bread {
     height: 18px;
-    border-radius: 20vh 20vh 2.5vh 2.5vh; }
-    .hamburger:active .top-bread .seed, .hamburger.expanded .top-bread .seed {
+    border-bottom: 3px solid green;
+    border-radius: 20px 20px 2.5px 2.5px; }
+    .hamburger.expanded .top-bread .seed {
       display: inline-block; }
-  .hamburger:active .veggies, .hamburger.expanded .veggies {
-    border-bottom: 2px solid red; }
-  .hamburger:active .meat-cheese, .hamburger.expanded .meat-cheese {
+  .hamburger.expanded .bread {
+    border-top: 2px solid red; }
+  .hamburger.expanded .meat-cheese {
     border-bottom: 1px solid yellow; }
 
 /*--------------------------------------------------------------

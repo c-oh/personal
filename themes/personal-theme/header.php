@@ -31,14 +31,18 @@
 				  <div id= "nav-icon">
 					<div class="hamburger">
 						<div class= "bars top-bread"> 
-							<p class="seed s2"></p> 
-							<p class="seed s2"></p> 
-							<p class=" seed s2"></p>
+							<div class= "seed-container">
+							<p class="seed"></p> 
+							<p class="seed"></p> 
+							<p class=" seed"></p>
+							</div>
 						</div>
 						<div class= "bars meat-cheese"> </div>
-						<div class= "bars veggies"> </div>
 						<div class = "bars bread"> </div>
 					</div>
+					<div class= "menu-tag">
+						<p class= "menu-text"> menu </p>
+						</div>
 					</div>
 				
 			</header><!-- #masthead -->
