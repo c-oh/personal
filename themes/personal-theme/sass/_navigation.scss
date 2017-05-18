@@ -1,43 +1,123 @@
-ul{
+ul {
 	font-family: $font_os;
 	font-weight: 200;
-	a{
+	a {
 		display: block;
 	}
 }
 
-
 .home {
-  position: relative;
-  left: 0;
+	position: relative;
+	left: 0;
 }
+
 #menu {
-  position: fixed;
-  width: 240px;
-  height: 100%;
-  top: 0;
-  left: -290px;
-  z-index: 1000;
-  background-color: #186;
-  overflow: auto;
+	position: fixed;
+	width: 200px;
+	height: 100%;
+	top: 0;
+	left: -254px;
+	z-index: 1000;
+	background-color: #186;
+	overflow: auto;
 }
+
 #menu,
 .home {
 	-webkit-transition: all 0.3s ease;
 	-moz-transition: all 0.3s ease;
 	transition: all 0.3s ease;
 }
+
 #menu.menu-open {
 	left: 0px;
+	margin-left: 0px;
 }
+
 .menu-push {
-	left: 290px;
+	left: 200px;
 }
-.site-header button {
-  color: yellow;
-  border: none;
-  position: fixed;
-  padding: 30px;
-  background-color: transparent;
-  z-index: 99;
+
+#nav-icon {
+	position: absolute;
+	z-index: 99;
+	cursor: pointer;
+	margin-left:10px;
+}
+
+.hamburger {
+	margin-top: 10px;
+	display: inline-block;
+	.bars {
+		margin-top: 5px;
+		background: #DAA520;
+		height: 5px;
+		width: 40px;
+		border-radius: 2.5vh;
+		position: relative;
+	}
+	.meat-cheese {
+		background: #8B4513;
+		&::after {
+			border: 6px solid yellow;
+			border-color: yellow transparent transparent transparent;
+			position: absolute;
+			content: "";
+			bottom: -10px;
+			right: 4px;
+			transition: .3s all ease-in-out;
+			display: none;
+		}
+	}
+	.top-bread {
+		overflow: hidden;
+		transition: .3s all ease-in-out;
+		position: relative;
+		top: 0;
+	}
+	.veggies {
+		background-color: green;
+	}
+	.seed {
+	display: none;
+	width: 3px;
+	height: 4px;
+	background-color: #fdf1cb;
+	margin-left: 8px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	-webkit-box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
+	box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
+	top: -12px;
+	position: relative;
+	-webkit-transform: rotate(110deg);
+	-moz-transform: rotate(110deg);
+	-ms-transform: rotate(110deg);
+	-o-transform: rotate(110deg);
+	transform: rotate(110deg);
+}
+
+	&:active,
+	&.expanded {
+		.meat-cheese::after {
+			bottom: -12px;
+			z-index: 99;
+			display: block;
+		}
+		.top-bread {
+			height: 18px;
+			border-radius: 20vh 20vh 2.5vh 2.5vh;
+			.seed{
+				display: inline-block;
+			}
+		}
+		.veggies {
+			border-bottom: 2px solid red;
+		}
+		.meat-cheese {
+			border-bottom: 1px solid yellow;
+		}
+	}
 }

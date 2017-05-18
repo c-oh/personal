@@ -28,7 +28,19 @@
 				<nav id="site-navigation" class="main-navigation" role="navigation">
 					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'menu' ) ); ?>
 				</nav><!-- #site-navigation -->
-				  <button href="#" class="menu-btn"><i class="fa fa-bars fa-3x"></i></button>
+				  <div id= "nav-icon">
+					<div class="hamburger">
+						<div class= "bars top-bread"> 
+							<p class="seed s2"></p> 
+							<p class="seed s2"></p> 
+							<p class=" seed s2"></p>
+						</div>
+						<div class= "bars meat-cheese"> </div>
+						<div class= "bars veggies"> </div>
+						<div class = "bars bread"> </div>
+					</div>
+					</div>
+				
 			</header><!-- #masthead -->
 
 			<div id="content" class="site-content">
