@@ -50,17 +50,24 @@ body {
 	transition: all 0.3s ease;
 }
 
-//the nav containr
-#navbar-section {
-	z-index: 2;
-	cursor: pointer;
+//the nav icon and text container
+#nav-icon{
 	display: flex;
-	position: absolute;
-	justify-content:  space-between;
-	width: 100%;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	.icon-container{
+		display: flex;
+		z-index: 99;
+		margin-left: 20px;
+	}
+	.logo-container{
+		width: 50px;
+		z-index: 99;
+		margin-right: 20px;
+		margin-top: 10px;
+	}
 }
 
-//nav menu tag
 .menu-tag {
 	color: white;
 	margin-left: 10px;
@@ -76,21 +83,10 @@ body {
 	}
 }
 
-//logo section
-.logo{
-	position: absolute;
-	z-index: 100;
-	width: 65px;
-	height: auto;
-}
-.icon-container{
-	display: flex;
-	margin-left: 10px;
-	z-index: 99;
-}
 // This makes the hamburger icon
 .hamburger {
 	margin-top: 10px;
+	cursor: pointer;
 	.bars {
 		margin-top: 5px;
 		background: #DAA520;
