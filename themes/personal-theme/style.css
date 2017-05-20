@@ -475,13 +475,15 @@ body {
 body {
   transition: all 0.3s ease; }
 
-#nav-icon {
-  position: absolute;
-  z-index: 99;
+#navbar-section {
+  z-index: 2;
   cursor: pointer;
-  margin-left: 15px;
   display: -ms-flexbox;
-  display: flex; }
+  display: flex;
+  position: absolute;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  width: 100%; }
 
 .menu-tag {
   color: white;
@@ -494,6 +496,18 @@ body {
     letter-spacing: 2px; }
     .menu-tag .menu-text.expanded-text {
       margin-top: 24px; }
+
+.logo {
+  position: absolute;
+  z-index: 100;
+  width: 65px;
+  height: auto; }
+
+.icon-container {
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 10px;
+  z-index: 99; }
 
 .hamburger {
   margin-top: 10px; }
@@ -766,6 +780,10 @@ object {
     border-color: transparent; }
   50% {
     border-color: orange; } }
+
+.scroll-image {
+  height: 64px;
+  cursor: pointer; }
 
 #colophon {
   background-color: #ffd813; }
